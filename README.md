@@ -1,10 +1,9 @@
 ### Usage
-Just derive your class with this: Singleton<YOURCLASS>
+Just derive your class like this example:
 
-Example: 
 
 ```csharp
-public class GameManager : Singleton<GameManager>
+public class GameManager : Singleton<YOURCLASS>
 {
 	// your code...	
 }
