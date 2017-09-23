@@ -28,7 +28,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
                         tempGameObject.name = Type.Name;
                         _instance = tempGameObject.GetComponent<T>();
                     }
-                    // if not found, create an prefab and store it in resources folder.
+                    // if not found, create a prefab and store it in resources folder.
                     else
                     {
                         var tempGameObject = new GameObject(Type.Name);
