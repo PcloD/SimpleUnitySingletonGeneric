@@ -1,5 +1,4 @@
 using System;
-using UnityEditor;
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
@@ -27,15 +26,6 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
                         var tempGameObject = Instantiate(tempObject);
                         tempGameObject.name = Type.Name;
                         _instance = tempGameObject.GetComponent<T>();
-                    }
-                    // if not found, create an prefab and store it in resources folder.
-                    else
-                    {
-                        var tempGameObject = new GameObject(Type.Name);
-                        tempGameObject.AddComponent<T>();
-                        PrefabUtility.CreatePrefab("Assets/SingletonGeneric/Resources/" + Type.Name +".prefab", tempGameObject);
-                        _instance = tempGameObject.GetComponent<T>();
-                        Debug.Log("Prefab created!");
                     }
                 }
                 // Make the object to dont destroy on load.
