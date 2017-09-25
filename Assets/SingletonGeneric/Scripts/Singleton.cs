@@ -44,10 +44,11 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
         }
         else
         {
-            if (this == _instance) return;
-
-            Debug.Log("More then one instance of: " + Type.Name + " this instance will be deleted to preserve only one");
-            Destroy(this.gameObject);
+            if (this != _instance)
+            {
+                Debug.Log("More then one instance of: " + Type.Name + " this instance will be deleted to preserve only one");
+                Destroy(this.gameObject);
+            }
         }
     }
 }
