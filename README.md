@@ -3,9 +3,9 @@ Just inherit your class like this example:
 
 
 ```csharp
-public class GameManager : Singleton<YOURCLASS>
+public class YourClass : Singleton<YourClass>
 {
-	// your code...	
+	// Your code...
 }
 ```
 
